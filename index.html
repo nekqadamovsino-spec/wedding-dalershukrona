@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Далер & Шукрона — свадебное приглашение</title>
+  <meta property="og:title" content="Далер & Шукрона — свадебное приглашение">
+<meta property="og:description" content="29 ноября 2026 года">
+<meta property="og:image" content="preview.jpg">
+<meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="#invite">Приглашение</a>
+    <a href="#date">Дата</a>
+    <a href="#place">Место</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#rsvp">Подтвердить</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="monogram">D <span>&</span> Sh</div>
+      <p class="overline">Мы женимся</p>
+      <h1>Далер<br><span>&</span><br>Шукрона</h1>
+      <p class="date-line">29 ноября 2026 · 14:00</p>
+      <a href="#invite" class="scroll">Листайте вниз</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="invite" class="section invite">
+      <div class="ornament">❦</div>
+      <h2 class="script">Дорогие наши!</h2>
+      <p>С большой радостью приглашаем вас разделить с нами день, с которого начнётся наша семейная история.</p>
+      <p>Для нас будет особенно ценно видеть рядом самых близких людей, услышать ваши тёплые слова и провести этот день в атмосфере любви, радости и красивых воспоминаний.</p>
+      <p class="signature">С любовью, Далер и Шукрона</p>
+    </section>
+
+    <section id="date" class="section date-section">
+      <p class="overline dark">До нашей свадьбы осталось</p>
+      <div class="countdown">
+        <div><span id="days">0</span><small>дней</small></div>
+        <div><span id="hours">0</span><small>часов</small></div>
+        <div><span id="minutes">0</span><small>минут</small></div>
+        <div><span id="seconds">0</span><small>секунд</small></div>
+      </div>
+      <div class="date-card">
+        <div><span class="big">29</span><span>ноября</span></div>
+        <div><span class="big">2026</span><span>начало в 14:00</span></div>
+      </div>
+    </section>
+
+    <section class="section story">
+      <div class="story-text">
+        <p class="overline dark">Наша история</p>
+        <h2>Один день, который хочется запомнить навсегда</h2>
+        <p>Мы хотим, чтобы этот праздник был не просто торжеством, а тёплым вечером с людьми, которые дороги нашему сердцу.</p>
+      </div>
+      <div class="story-grid">
+        <img src="gallery1.jpg" alt="Далер и Шукрона у озера" />
+        <img src="gallery2.jpg" alt="Далер и Шукрона в лодке" />
+      </div>
+    </section>
+
+    <section id="place" class="section place">
+      <p class="overline dark">Место проведения</p>
+      <h2>Ресторан «Асаки»</h2>
+      <div class="place-card" style="grid-template-columns:1fr;max-width:620px;text-align:center">
+        <div class="place-info">
+          <p>Ресторан «Асаки»</p>
+          <p>29 ноября 2026 · 14:00</p>
+          <a class="button" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20%D0%90%D1%81%D0%B0%D0%BA%D0%B8">Открыть карту</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <p class="overline dark">Галерея</p>
+      <h2>Наши моменты</h2>
+      <div class="gallery">
+        <img src="gallery8.jpg" alt="Фото Далер и Шукрона" />
+        <img src="gallery4.jpg" alt="Фото Шукрона в лодке" />
+        <img src="gallery5.jpg" alt="Фото с лошадьми" />
+        <img src="gallery6.jpg" alt="Фото на закате" />
+        <img src="gallery7.jpg" alt="Лебеди" />
+        <img src="gallery9.jpg" alt="Букет и книга" />
+      </div>
+    </section>
+
+    <section id="rsvp" class="section rsvp">
+      <div class="ornament">❦</div>
+      <h2>Подтвердите присутствие</h2>
+      <p>Пожалуйста, сообщите нам заранее, сможете ли вы быть с нами в этот день.</p>
+      <form onsubmit="sendRSVP(event)">
+        <input id="guestName" type="text" placeholder="Ваше имя" required>
+        <select id="guestAnswer" required>
+          <option value="">Выберите ответ</option>
+          <option>Буду присутствовать</option>
+          <option>К сожалению, не смогу</option>
+        </select>
+        <button type="submit">Подтвердить</button>
+      </form>
+      <p id="formResult" class="form-result"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="monogram small">D <span>&</span> Sh</div>
+    <p>29.11.2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
