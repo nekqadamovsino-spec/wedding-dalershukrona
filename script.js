@@ -120,3 +120,67 @@ document.querySelectorAll(".gallery img").forEach(img =>
     initWeddingAnimations();
   }
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("weddingMusic");
+  const button = document.getElementById("musicButton");
+
+  if (!music || !button) {
+    console.error("Не найден weddingMusic или musicButton");
+    return;
+  }
+
+  music.volume = 0.5;
+
+  function updateButton() {
+    const playing = !music.paused;
+
+    button.textContent = playing ? "Ⅱ" : "♫";
+    button.classList.toggle("playing", playing);
+  }
+
+  async function playMusic() {
+    try {
+      await music.play();
+      updateButton();
+    } catch (error) {
+      console.log("Автозапуск заблокирован:", error);
+    }
+  }
+
+  button.addEventListener("click", async (event) => {
+    event.stopPropagation();
+
+    if (music.paused) {
+      try {
+        await music.play();
+      } catch (error) {
+        alert("Музыка не найдена. Проверьте файл music.mp3");
+        console.error(error);
+      }
+    } else {
+      music.pause();
+    }
+
+    updateButton();
+  });
+
+  function firstTouch(event) {
+    if (event.target.closest("#musicButton")) return;
+
+    playMusic();
+
+    document.removeEventListener("click", firstTouch);
+    document.removeEventListener("touchstart", firstTouch);
+  }
+
+  document.addEventListener("click", firstTouch);
+  document.addEventListener("touchstart", firstTouch, {
+    passive: true
+  });
+
+  music.addEventListener("play", updateButton);
+  music.addEventListener("pause", updateButton);
+
+  playMusic();
+  updateButton();
+});
