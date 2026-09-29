@@ -170,3 +170,20 @@ button:active,
       0 0 0 10px rgba(232, 199, 123, 0);
   }
 }
+.place-card{grid-template-columns:1fr;max-width:620px;text-align:center}
+@media(max-width:400px){h1{font-size:clamp(42px,13vw,52px);letter-spacing:.04em}}
+.place-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 850px;
+  gap: 24px;
+  text-align: center;
+}
+
+.place-card img.venue-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(49, 34, 20, 0.15);
+}
