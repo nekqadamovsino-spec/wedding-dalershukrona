@@ -132,8 +132,8 @@ button:active,
   border: 1px solid #EFE3D5;
   border-radius: 50%;
 
-  background: rgba(128, 16, 34, 0.95);
-  color: white;
+  background: #EFE3D5;
+  color: #3f2b1d;
 
   font-size: 24px;
   line-height: 1;
